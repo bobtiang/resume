@@ -1,4 +1,11 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
+    height: 100%;
+    margin: 0;
     font-family: 'Source Sans Pro';
     /*background:rgb(11, 135, 250);*/
     background: #0d284b;
@@ -49,6 +56,26 @@ header .contact span {
     display: inline;
     color: #0d284b;
     font-size:1em;
+}
+
+.bg, .bg2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bg {
+    -webkit-clip-path: polygon(71% 73%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(71% 73%, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+    background-color: #a0cffa;
+}
+
+.bg2 {
+    -webkit-clip-path: polygon(61% 68%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(61% 68%, 100% 0, 100% 100%, 0% 100%);
+    z-index: -2;
+    background-color: #3f5970;
 }
 
 .container {
@@ -141,5 +168,13 @@ ul li span {
 
     .container, .footend {
         text-align:center;
+    }
+
+    .bg {
+       visibility: hidden;
+    }
+
+    .bg2 {
+        visibility: hidden;
     }
 }
