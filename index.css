@@ -1,11 +1,11 @@
 html {
-    height: 100%;
+    height: 100%;    
     margin: 0;
 }
 
 body {
     height: 100%;
-    margin: 0;
+    margin: 0;    
     font-family: 'Source Sans Pro';
     /*background:rgb(11, 135, 250);*/
     background: #0d284b;
@@ -26,12 +26,17 @@ header {
     display: grid;
     grid-template-columns: 80% auto;
     /*background: linear-gradient(45deg,#3c89ee, #084299);*/
-    background:  linear-gradient(45deg,#e5f4ff, #235ca5);
+    background:  linear-gradient(45deg,#b5d8f8, #235ca5);
     padding: 1.5em;    
 }
 
-header span {
-    text-decoration:none;
+header > div > span:nth-child(1) {    
+    color: #0d284b;
+    font-size:1.7em;
+    font-weight:450;
+}
+
+header > div > span:nth-child(2) {    
     color: #0d284b;
     font-size:1.8em;
     font-weight:700;
@@ -110,12 +115,18 @@ ul {
     /*perspective: 1000px; */
 }
 
+/*
+footer ul li:hover{     
+    border: 4px solid #a0cffa;
+    cursor: pointer;
+}
+*/
 
 footer ul li {
     padding: 2em;
     color:rgb(116, 163, 218);
     background: rgb(9, 69, 146);    
-
+    overflow: hidden;    
     /*
     display: grid;
     grid-template-columns: auto;
@@ -145,6 +156,7 @@ ul li:nth-child(3) {
 }
 */
 
+
 ul li span {
     display: block;
     font-size:1.4em;
@@ -152,6 +164,93 @@ ul li span {
     color: #a0cffa;
 }
 
+footer ul li:hover {
+       
+    cursor: pointer;
+}
+
+footer ul li:hover span{         
+    font-weight: 800;
+    color: #a0cffa;    
+}
+
+/* -- curol top right ==================================================================================================== */
+
+footer ul li {
+    backface-visibility: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);    
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0px);
+    vertical-align: middle;
+}
+
+footer ul li::before {
+    background: rgba(0, 0, 0, 0) 
+                linear-gradient(225deg, rgb(25, 99, 196) 45%, rgb(54, 94, 150) 30%, rgb(102, 137, 184) 55%, rgb(208, 240, 240) 90%) 
+                repeat scroll 0 0;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition-duration: 0.5s;
+    transition-property: width, height;
+    width: 0;
+}
+footer ul li:hover::before, footer ul li:focus::before, footer ul li:active::before {
+    height: 75px;
+    width: 75px;
+}
+
+/* -- ========================================================================================================== */
+
+/* -- model pop up ============================================================================================== */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* -- ========================================================================================================== */
 
 .footend {
     grid-area: end;

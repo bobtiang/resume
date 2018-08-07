@@ -9,8 +9,14 @@
 
     </head>
     <body>
+            <div class="bg"></div>
+            <div class="bg2"></div>
+            
             <header>
-                <span>BOBBY TIANG</span>
+                <div>
+                    <span>I'M </span>
+                    <span>BOBBY TIANG</span>
+                </div>
                 <ul id="sociallink">                                                      
                     <li id="social-nav-fb">
                         <a href="https://www.facebook.com/bobtiang">
@@ -44,21 +50,19 @@
                         </li>   
                     </ul>
                 </div>
-            </header>
-    
-            <div class="bg"></div>
-            <div class="bg2"></div>
+            </header>    
+
             <div class="container">                
                 <div id="content">
-                    <h1>Perceptive Application Developer</h1>
-                    <p>Perceptive Application Developer adept designing innovative IT solutions and enhancing existing systems with new features. Committed to improve business productivity and efficiency. Passionate in applying technical expertise to develop effective solutions applicable to current business practices.</p>
+                    <h1>Application Developer</h1>
+                    <p>A Perceptive Application Developer adept designing innovative IT solutions and enhancing existing systems with new features. Committed to improve business productivity and efficiency. Passionate in applying technical expertise to develop effective solutions applicable to current business practices.</p>
                     <p>I have got the privilege working with small and large group of team members across the globe and have been practicing various methodology of software development.</p>
                 </div>
                 <img src="img/profile.png" alt="Avatar" />
-            </div>
-    
+            </div>    
+
             <footer>
-                <ul>
+                <ul class="trigger">
                     <li>
                         <span>Experience</span>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -86,9 +90,32 @@
                 </ul>
             </footer>
 
-            <div class="footend">
-                <span>Bob Creation</span>
-                <time></time>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h1>Hello, I am a modal!</h1>
+                </div>
             </div>
+
+            
     </body>
+    <script>
+        var modal = document.querySelector(".modal");
+        var trigger = document.querySelector(".trigger");
+        var closeButton = document.querySelector(".close-button");
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+    </script>
 </html>
