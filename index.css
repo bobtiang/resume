@@ -73,7 +73,7 @@ header .contact span {
     -webkit-clip-path: polygon(71% 73%, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(71% 73%, 100% 0, 100% 100%, 0% 100%);
     z-index: -1;
-    background-color: #a0cffa;
+    background-color: #a0cffa;    
 }
 
 .bg2 {
@@ -87,15 +87,15 @@ header .contact span {
     grid-area: body;
     display: grid;
     grid-template-columns: 70% auto;
-    padding: 4em 2em;
-    grid-gap: 25px;
+    padding: 4em 2em;    
 }
 
 .container img {
     border-radius: 30%;    
     width:180px;
     justify-self: center;
-    border: 5px solid  rgba(236, 242, 247, 0.6);
+    border: 5px solid  rgba(236, 242, 247, 0.6);    
+    margin-right: 5px;
 }
 
 footer {
@@ -126,7 +126,8 @@ footer ul li {
     padding: 2em;
     color:rgb(116, 163, 218);
     background: rgb(9, 69, 146);    
-    overflow: hidden;    
+    overflow: hidden;        
+    
     /*
     display: grid;
     grid-template-columns: auto;
@@ -138,6 +139,15 @@ footer ul li {
     border-bottom: 4px solid rgba(0,0,0,.2);
     width: 600px;
     */
+}
+
+footer ul li img{
+    width: 20px;    
+    margin-right: 5px;
+}
+
+footer ul li span {
+    display: inline;
 }
 
 /*
