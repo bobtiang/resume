@@ -49,15 +49,50 @@ header ul#sociallink {
     grid-gap: 10px;
 }
 
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(0, -1px, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(0, 2px, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(0, -4px, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(0, 4px, 0);
+    }
+  }
+
+
+header ul#sociallink li:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
 header ul#sociallink li a img{
     width: 30px;
 }
 
-header .contact img {   
+header div#contact li:nth-child(-n+2) img:hover  { /* wobble effect apply to only first 2 icon (phone and email) */
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+header #contact img {   
     width: 20px;
 }
 
-header .contact span {
+header #contact span {
     display: inline;
     color: #0d284b;
     font-size:1em;
